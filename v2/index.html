@@ -2,20 +2,24 @@
 <html>
     <head>
         <script src="js/libs/jquery.min.js"></script>
+        
+        <script src="js/quizModel.js"></script>
+        <script src="js/quizView.js"></script>
+        <script src="js/userModel.js"></script>
+        <script src="js/userView.js"></script>
+        
         <script src="js/app.js"></script>
         
-        <script type="text/json" src="resources/quiz.json"></script>
-
+        <link rel="stylesheet" type="text/css" href="style/style.css"></link>
+        
     </head>
     <body>
         <div id="container">
             <form id="questionForm">
                 <div id="title"></div>
                 <div id="questions-box"></div>
-                <div id="btn-next-container">
+                <div id="btns-container">
                     <input type="button" value="Next!" id="btn-next">
-                </div>
-                <div id="btn-back-container">
                     <input type="button" value="Back!" id="btn-back">
                 </div>
             </form>

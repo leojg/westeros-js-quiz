@@ -1,0 +1,27 @@
+#title {
+    padding-bottom: 20px;
+    border-bottom: 1px solid;
+}
+
+#btns-container {
+    display: inline;
+}
+
+#container {
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+}
+
+#questions-box {
+    padding-bottom: 40px;    
+}
+
+#questions-box div {
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+#questions-box div * {
+    display: inline;
+}
