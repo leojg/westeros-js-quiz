@@ -1,15 +1,24 @@
 $(document).ready(function() {
-        
-        loadQuiz(getNextQuestion);
-        
-        var btnNext = this.querySelector('#btn-next');
-        btnNext.addEventListener('click', handleNextClick);    
-    
-        var btnBack = this.querySelector('#btn-back');
-        btnBack.addEventListener('click', handleBackClick)
-    
+    if (sessionStorage.getItem("currentUser")) {
+        renderQuiz();        
+    } else {
+        renderLoginView();        
+    }
 });
 
+function logInWithUser(userName) {
+    
+    //sets user to currentuser
+    sessionStorage.setItem("currentUser", userName); 
+    
+    //If not in localstorage saves it
+    if (!getUser(userName)) {
+        saveUser(userName);
+    }
+    
+    renderQuiz();
+
+}
 
 //utilitary functions
 
@@ -21,9 +30,6 @@ function hasClass(el, cssClass) {
     }
     return false;
 }
-
-
-
 
 
 

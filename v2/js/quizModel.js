@@ -1,32 +1,33 @@
 //implement commonjs style object model
 
-
-function loadQuiz(callback) {
+var quiz = {
     
-    $.getJSON("../resources/quiz.json", function(data) {
-        
-        quiz = data;
-        quiz.title = "A world of ice and fire numbers";
-        quiz.currentQuestion = -1;
-        quiz.correctAnswers = 0;
-        
-        var title = document.getElementById('title');
-        title.appendChild(document.createTextNode(quiz.title));
-        
-        callback();
+    title: "",
+    currentQuestion: -1,
+    correctAnswers: 0,
+    questions: [],
 
-
-    });
     
-}
+    load: function(callback) {
+        
+        var self = this;
+        
+        $.getJSON("../resources/questions.json", function(data) {
+            self.questions = data;
+            callback();
+        });
 
-function checkAnswer(answer, qindex) {
-   
-    var question = quiz.questions[qindex];
-    
-    if (answer == question.solution) {
-        return true;
+    },
+
+    checkAnswer: function(answer, qindex) {
+
+        var question = this.questions[qindex];
+
+        if (answer == question.solution) {
+            return true;
+        }
+
+        return false;
     }
-    
-    return false;
+
 }

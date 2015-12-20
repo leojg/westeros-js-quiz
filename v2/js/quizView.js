@@ -1,3 +1,23 @@
+function renderQuiz() {
+    $("#container").empty();
+    $("#container").load("../resources/templates/quiz.html", function() {
+        quiz.load(getNextQuestion);
+        
+        var title = document.getElementById('title');
+        
+        var titleStr = "Wellcome " + sessionStorage.getItem("currentUser") + " to a world of ice and fire in numbers"
+                    
+        title.appendChild(document.createTextNode(titleStr));
+        
+
+        var btnNext = this.querySelector('#btn-next');
+        btnNext.addEventListener('click', handleNextClick);    
+
+        var btnBack = this.querySelector('#btn-back');
+        btnBack.addEventListener('click', handleBackClick)
+    });
+}
+
 function handleNextClick() {
     var form = document.forms[0];
     var checkedAnswer;
@@ -6,7 +26,7 @@ function handleNextClick() {
         var answer = form.elements.answer[i];
 
         if (answer.checked === true) {
-            if (checkAnswer(answer.value, quiz.currentQuestion)) {
+            if (quiz.checkAnswer(answer.value, quiz.currentQuestion)) {
                 quiz.correctAnswers += 1;
             }
             getNextQuestion();
