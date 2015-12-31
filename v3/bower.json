@@ -1,0 +1,21 @@
+{
+  "name": "Westeros Quiz",
+  "homepage": "https://github.com/leojg/westeros-js-quiz",
+  "authors": [
+    "Leandro Garcia <leojg2091@gmail.com>"
+  ],
+  "description": "A demo JS project",
+  "main": "index.html",
+  "keywords": [
+    "backbone"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
