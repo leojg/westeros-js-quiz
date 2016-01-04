@@ -1,0 +1,62 @@
+body {
+    height: 100vh;
+}
+
+#container {
+    background: url("../resources/background.jpg");
+    background-size:100%;
+    min-height: 100%;
+}
+
+#title {
+    padding-bottom: 20px;
+    border-bottom: 1px solid;
+}
+
+#btns-container {
+    display: inline;
+}
+
+#btn-next {
+    float: right;
+}
+
+#questions-box {
+    padding-bottom: 40px;    
+}
+
+#questions-box div {
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+#questions-box div * {
+    display: inline;
+}
+
+/* Login */
+
+#login-container, #quiz-container, #summary-container {
+    background: rgba(200, 200, 200, 0.8);
+    padding: 20px;
+    border-radius: 7px;
+    margin-top: 45px;
+}
+
+#login-container > h1 {
+    margin-bottom: 40px;
+}
+
+#login-form *{
+    display:block;
+    margin-top: 5px;
+    margin-bottom: 10px;    
+}
+
+@media (max-width: 768px) {
+    #container {
+        background: url("../resources/background.jpg");
+        background-repeat: no-repeat;
+        min-height: 100%;
+    }    
+}

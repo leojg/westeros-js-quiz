@@ -1,0 +1,30 @@
+{
+"title": "",
+"currentQuestion": -1,
+"correctAnswers": 0,
+"questions": [{
+    "question": "The Westerosi capital population is:",
+    "answers": [
+        "half a millon",
+        "a quarter of a millon",
+        "seven hundred thousands"
+    ],
+    "solution": 0
+}, {
+    "question": "The number of The Free Cities is:",
+    "answers": [
+        "seven",
+        "eigth",
+        "nine"
+    ],
+    "solution": 2
+}, {
+    "question": "The heigth of the wall is:",
+    "answers": [
+        "a thousand feets",
+        "seven hundred feets",
+        "three hundred feets"
+    ],
+    "solution": 1
+}]
+}
