@@ -3,7 +3,8 @@ requirejs.config({
         jquery: 'libs/jquery',
         backbone: 'libs/backbone',
         underscore: 'libs/underscore',
-        text: 'libs/text'
+        text: 'libs/text',
+        bootstrap: 'libs/bootstrap'
     }
 });
 

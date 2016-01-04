@@ -30,7 +30,7 @@ define(['underscore', 'backbone', 'models/quizModel','text!/resources/templates/
             var template = _.template(quizTemplate);
             this.$el.html(template);
 
-            var title = $(this.$el).find('#title');
+            var title = this.$el.find('#title');
 
             var titleStr = "Welcome " + sessionStorage.getItem("currentUser") + " to a world of ice and fire in numbers"
             $(title).text(titleStr);
@@ -41,7 +41,7 @@ define(['underscore', 'backbone', 'models/quizModel','text!/resources/templates/
         },
 
         getNextQuestion: function() {
-            var questionsBox = $(this.$el).find('#questions-box');       
+            var questionsBox = this.$el.find('#questions-box');       
             $(questionsBox).empty();
 
 
@@ -53,7 +53,7 @@ define(['underscore', 'backbone', 'models/quizModel','text!/resources/templates/
 
             if (currentQuestion < questions.length) {
 
-                $(this.$el).find('#btn-next').prop("disabled",true);
+                this.$el.find('#btn-next').prop("disabled",true);
                 this.renderQuestion(questionsBox, questions[currentQuestion]);
 
             } else {
@@ -96,7 +96,8 @@ define(['underscore', 'backbone', 'models/quizModel','text!/resources/templates/
         },
 
         handleNextClick: function() {
-            var formDataArr = $(this.$el).find("form:first").serializeArray();
+            //Finds the value of answer, which is a radio button.
+            var formDataArr = this.$el.find("form:first").serializeArray();
             var checkedAnswer;           
             var answer = (formDataArr[0].name == "answer") ? formDataArr[0].value : undefined; 
 
@@ -117,21 +118,32 @@ define(['underscore', 'backbone', 'models/quizModel','text!/resources/templates/
             } else {            
                 currentQuestion -= 1;                                                    
                 this.model.set("currentQuestion", currentQuestion)
-                getStoredQuestion(currentQuestion);
+                this.getStoredQuestion(currentQuestion);
             }
         },
             
         handleRadioClick: function() {
-            $(this.$el).find('#btn-next:disabled').prop("disabled",false);
-                        
-            var selectedValue = this.value;
+            this.$el.find('#btn-next:disabled').prop("disabled",false);
+            //An alternative way of finding answer value. 
+            var selectedValue = this.$el.find("#questionForm").find("input[type=radio][name=answer]:checked").val()
+
             sessionStorage.setItem(this.model.get("currentQuestion"), selectedValue);            
         
         },
 
-        showSummaryScreen: function() {
+        getStoredQuestion: function(qid) {
+            var qAnswer = sessionStorage.getItem(qid);
 
+            if (qAnswer) {
+                var questionsBox = this.$el.find('#questions-box');       
+                $(questionsBox).empty();
+                                
+                if (this.model.get("currentQuestion") < this.model.get("questions").length) {
 
+                    this.$el.find('#btn-next').prop("disabled",true);
+                    this.renderQuestion(questionsBox, this.model.get("questions")[this.model.get("currentQuestion")], qAnswer);
+                }            
+            }
         }
 
 

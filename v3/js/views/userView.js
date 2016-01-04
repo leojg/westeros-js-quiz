@@ -21,7 +21,7 @@ define(['underscore', 'backbone', 'views/quizView', 'models/userModel', 'models/
 
             event.preventDefault();
 
-            var userName = $(this.$el).find("#txt-username").val();
+            var userName = this.$el.find("#txt-username").val();
 
             if (userName) {
                 //sets user to currentuser
