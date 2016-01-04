@@ -1,4 +1,4 @@
-define(['underscore', 'backbone', 'views/quizView', 'models/userModel', 'models/quizModel','text!/resources/templates/login.html'], function(_, Backbone, QuizView, User, Quiz, loginTemplate) {
+define(['underscore', 'backbone', 'views/quizView', 'models/userModel', 'models/quizModel','text!resources/templates/login.html'], function(_, Backbone, QuizView, User, Quiz, loginTemplate) {
 
     var UserView = Backbone.View.extend({
         
