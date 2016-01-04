@@ -1,7 +1,7 @@
 define(['backbone'], function(Backbone) {
 
     var Quiz = Backbone.Model.extend({
-        url: "/resources/quiz.json", 
+        url: "../resources/quiz.json", 
         
         checkAnswer: function(answer) {
    
