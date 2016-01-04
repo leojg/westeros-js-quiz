@@ -1,5 +1,6 @@
 requirejs.config({
     paths: {
+        templates: '../resources/templates',
         jquery: 'libs/jquery',
         backbone: 'libs/backbone',
         underscore: 'libs/underscore',

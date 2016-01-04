@@ -1,4 +1,4 @@
-define(['underscore', 'backbone', 'models/quizModel','text!resources/templates/quiz.html', 'views/summaryView'], 
+define(['underscore', 'backbone', 'models/quizModel','text!templates/quiz.html', 'views/summaryView'], 
        function(_, Backbone, Quiz, quizTemplate, SummaryView) {
     
     var QuizView = Backbone.View.extend({

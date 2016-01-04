@@ -1,4 +1,4 @@
-define(["underscore","backbone","text!resources/templates/summary.html"],
+define(["underscore","backbone","text!templates/summary.html"],
        function(_, Backbone, summaryTemplate) {
 
     var SummaryView = Backbone.View.extend({
